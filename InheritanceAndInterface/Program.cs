@@ -6,7 +6,12 @@ namespace InheritanceAndInterface
     {
         static void Main(string[] args)
         {
-            StreamDemo.Run();
+
+            //var sum = NumberFileSumCalculator.GetSum();
+            //var lineReader = new FileLineReader("Numbers.txt");
+            var lineReader = new KeyboardLineReader();
+            var calculator = new NumberLinesSumCalculator(lineReader);
+            Console.WriteLine(calculator.GetSum());
             /*
                - Interface 
                     - kontrakt
@@ -15,6 +20,7 @@ namespace InheritanceAndInterface
                         - PC-komponenter, WC, strøm, lyspære
                         - bygge en tjeneste uavhengig av konkrete underliggende tjenester 
                           summere tall fra fil - eller tastatur - eller fra nettverk
+                            => (videre til arv, lage NumberReader: LineReader )
                - Arv
                     - "is a"
                     - en relasjon fra virkeligheten
@@ -27,6 +33,19 @@ namespace InheritanceAndInterface
                           for mer spesifikt - feks. PointReader og TextLineReader
                         - brukergrensesnittkomponenter
                         - HvetebolleOppskrift : GjærbakstOppskrift : BakeOppskrift : Oppskrift
+                        -   class Part
+                            {
+                                OEM
+                                Manufacturer
+                                Number
+                                Description
+                            }
+
+                            class Tire extends Part
+                            {
+                               Speed
+                               Rating
+                            }
                 - Composition
                     - "has a"
                     - eks:  class House { 
