@@ -13,7 +13,6 @@ namespace InheritanceAndInterface
 
         public int GetSum()
         {
-
             var sum = 0;
             var line = _lineReader.GetTheNextLineOrNullIfFinished();
             while (line != null)
@@ -23,6 +22,11 @@ namespace InheritanceAndInterface
                 line = _lineReader.GetTheNextLineOrNullIfFinished();
             }
             return sum;
+        }
+
+        public static int GetSum2(string[] lines)
+        {
+            return 0;
         }
     }
 }
